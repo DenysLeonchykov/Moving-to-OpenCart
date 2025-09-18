@@ -1,0 +1,408 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sitelab.com.ua — Переїзд з Prom.ua на OpenCart</title>
+  <meta name="description" content="Перенесемо ваш магазин з Prom.ua на OpenCart з підключенням CRM, аналітики та автоматизації." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== 1) HERO + КАЛЬКУЛЯТОР ========== -->
+  <header class="hero" id="home">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1>Створюємо сайти, які приносять клієнтів</h1>
+        <p class="lead">
+          Переїзд з <strong>Prom.ua</strong> на <strong>OpenCart</strong> з CRM, аналітикою та автоматизацією — під ключ.
+        </p>
+        <a class="btn btn--primary" href="#calc">Розрахувати економію за 2 хвилини</a>
+      </div>
+
+      <section class="calc" id="calc" aria-label="Онлайн калькулятор економії">
+        <h2 class="calc__title">Онлайн-калькулятор</h2>
+        <label for="turnover" class="calc__label">Ваш місячний оборот, ₴</label>
+        <input id="turnover" type="number" min="0" step="1000" placeholder="Напр.: 300000" class="calc__input" />
+
+        <p class="calc__label">Комісія на Prom.ua, %</p>
+        <div class="calc__chips" role="group" aria-label="Вибір відсотка">
+          <button class="chip" data-pct="2">2%</button>
+          <button class="chip" data-pct="5">5%</button>
+          <button class="chip" data-pct="8">8%</button>
+          <button class="chip" data-pct="10">10%</button>
+          <button class="chip" data-pct="12">12%</button>
+          <button class="chip" data-pct="15">15%</button>
+        </div>
+
+        <div class="calc__result" aria-live="polite">
+          <div><span>Комісія Prom.ua/міс:</span> <strong id="fee">₴0</strong></div>
+          <div><span>Комісія на OpenCart:</span> <strong>₴0</strong> <small>(0% — сайт ваш)</small></div>
+          <div class="save"><span>Ваша економія/міс:</span> <strong id="save">₴0</strong></div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- ========== 2) ПОРІВНЯННЯ ========== -->
+  <section class="compare">
+    <div class="container">
+      <h2 class="section-title">Порівняння Прому з Опенкарт</h2>
+
+      <div class="compare__grid">
+        <!-- PROM -->
+        <article class="card card--bad">
+          <div class="card__head">
+            <span class="badge badge--bad">Prom.ua ❌</span>
+          </div>
+          <ul class="list list--bad">
+            <li>Відгуки руйнують весь бізнес.</li>
+            <li>Комісія зростає: відсоток за замовлення, відсоток за рекламне замовлення, платні послуги.</li>
+            <li>Сайт не ваш. Закриють акаунт — все втратите.</li>
+            <li>Дизайн. Обмежені шаблони, схожі один на одного.</li>
+            <li>Функціонал мінімальний, без складних доопрацювань.</li>
+            <li>Примітивна статистика.</li>
+            <li>Не всі CRM і сторонні сервіси підключаються.</li>
+            <li>Платні послуги — Немає жодного контролю менеджерів.</li>
+            <li>Немає аналізу, чому замовлення скасували або на якому етапі втратили клієнта.</li>
+            <li>Немає нагадувань менеджерам, щоб повернути клієнта.</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Узнать, как это решить</a>
+        </article>
+
+        <!-- OPENCART -->
+        <article class="card card--good">
+          <div class="card__head">
+            <span class="badge badge--good">✅ OpenCart</span>
+          </div>
+          <ul class="list list--good">
+            <li>Відгуками Ви керуєте самі — 0% комісії — сайт ваш, дохід ваш.</li>
+            <li>Ваш сайт: домен, хостинг, база даних.</li>
+            <li>Індивідуальний дизайн під ваш бренд.</li>
+            <li>Гнучкість: будь-які модулі, інтеграції, автоматизація.</li>
+            <li>Підключення Google Tag Manager, детальна аналітика.</li>
+            <li>CRM, телефонія, месенджери, платежі легко підключити.</li>
+            <li>Разова розробка + хостинг.</li>
+            <li>Аналітика: чому скасували замовлення, який менеджер втрачає клієнтів, яка реклама окупається.</li>
+            <li>Воронка продажів: видно, де клієнти губляться (дзвінок → зустріч → оплата → повторна покупка).</li>
+          </ul>
+          <a href="#pricing" class="btn">Начать переезд с Prom.ua</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3) КЕЙСИ (з поп-ап) ========== -->
+  <section class="cases" id="cases">
+    <div class="container">
+      <h2 class="section-title">Кейси</h2>
+      <div class="cases__grid">
+            <button class="case" data-case-title="Заробили $38 346 за місяць на одязі"
+                    data-case-text="Клієнт
+                                        Виробник одягу, білизни та панчішно-шкарпеткових виробів у Східній Європі (Conte Elegant™, DiWaRi™, Conte Kids™).
+
+                                        Завдання
+                                        Отримати продажі з контекстної реклами з ROAS ≥1000%.
+
+                                        Робота
+
+                                        - Перевірка e-commerce налаштувань GA та створення списків ремаркетингу.
+                                        - Google Search Ads: 220 кампаній (сегментація на гарячий/теплий/холодний попит).
+                                        - Динамічні пошукові кампанії: автоматичний підбір ключів та релевантних сторінок.
+                                        - Google Merchant Smart Shopping: покази товарів у пошуку й медійній мережі.
+                                        - Динамічний ремаркетинг: повернення відвідувачів із конкретними товарами з кошика.
+
+                                        Результат
+
+                                        1033 транзакції
+                                        CPA = $2.35
+                                        Середній чек = $37.12
+                                        Витрати = $2427
+                                        Виручка = $38 346
+                                        ROAS = 1581%">
+            Заробили $38 346 за місяць на одязі
+            </button>
+        <button class="case" data-case-title="Шафи-купе: $10 000 виторг при витратах $383"
+                data-case-text="Клієнт: GuteHouze
+
+                        Мета: збільшити продажі шаф-купе та знизити CAC.
+
+                        Що зробили:
+
+                        Запустили 15 пошукових кампаній (продаючі, загальні, конкурентні, навколоцільові).
+
+                        Провели глибоку аналітику після тестового періоду: пост-клік аналіз, перевірка пошукових запитів, мінус-слова, поведінкові фактори.
+
+                        Перерозподілили бюджет на ефективні кампанії, зупинили неефективні.
+
+                        Результат:
+                        Рекламний бюджет: $383
+                        Виручка: $9 997
+                        Реклама окупилася багаторазово вже з другого місяця.">
+          Кейс: Шафи-купе: як отримати виторг у 10000$ при витратах 383$
+        </button>
+        <button class="case" data-case-title="Магазин «Xан»: +40% прибутку за 2 місяці"
+                data-case-text="Клієнт: Магазин «Xан»
+
+                Мета: підвищити прибуток і зменшити втрати на рекламі.
+
+                Що зробили:
+
+                - Перенесли магазин на OpenCart.
+                - Підключили наскрізну аналітику та Google Tag Manager.
+                - Налаштували ремаркетинг і оптимізували кошик.
+
+                Результат:
+                Всього за 2 місяці прибуток зріс на +40%, середній чек піднявся на +25%, а витрати на рекламу скоротилися на 30%.">
+          Кейс: как магазин "Xан" увеличил прибыль на 40% за 2 месяца
+        </button>
+      </div>
+      <a href="#contact" class="btn btn--primary btn--center">Получить такие же результаты</a>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__content" role="document">
+      <button class="modal__close" aria-label="Закрити" data-close>&times;</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <!-- ========== 4) FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Часті запитання</h2>
+
+      <details class="accordion">
+        <summary>А если что-то пойдет не так?</summary>
+        <p>Все этапы детально описаны и автоматизированы. Перенос выполняется по чек-листу с тестированием на каждом этапе: все данные (товары, категории, клиенты, заказы, SEO-структура) переносятся и проверяются до запуска.</p>
+      </details>
+
+      <details class="accordion">
+        <summary>Сложно ли управлять OpenCart?</summary>
+        <p>Проще, чем Prom.ua. После запуска предоставляется обучение, техподдержка и полная инструкция по управлению сайтом.</p>
+      </details>
+
+      <details class="accordion">
+        <summary>А если перенос окажется слишком дорогим?</summary>
+        <p>Перед стартом работ всегда составляется детальная смета без скрытых доплат. Каждый этап (перенос товаров, клиентов, заказов, SEO, интеграции) фиксирован и контролируем. После перехода комиссии и аренда чужой площадки исчезают — у вас долгосрочная економія до 30–50% расходов.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ========== 5) БАНЕР ПРО КОМІСІЇ ========== -->
+  <section class="stripe">
+    <div class="container">
+      <p>Кожен день на Prom.ua ви втрачаєте до <strong>20%</strong> на комісіях</p>
+    </div>
+  </section>
+
+  <!-- ========== 6) ВІДГУКИ ========== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="section-title">Відгуки. Конкретні цифри економії</h2>
+      <div class="reviews__grid">
+        <figure class="review">
+          <blockquote>«Экономлю ₴45,000/месяц на комиссиях»</blockquote>
+          <figcaption>Анатолий, строительный магазин «Мастерок»</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Трафик вырос на 67% за первый месяц»</blockquote>
+          <figcaption>Анна, магазин косметики «Топ Лайн»</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Средний чек увеличился с ₴850 до ₴1,440»</blockquote>
+          <figcaption>Игорь, магазин наушников «Ухо»</figcaption>
+        </figure>
+      </div>
+      <a href="#contact" class="btn btn--primary btn--center">Получить такие же результаты</a>
+  <section class="demos" id="demos">
+    <div class="container">
+      <h2 class="section-title">Приклад п'яти з тисячі демо-шаблонів</h2>
+      <div class="demos__grid">
+        <div class="demo"><span>Fashion</span></div>
+        <div class="demo"><span>Electronics</span></div>
+        <div class="demo"><span>Furniture</span></div>
+        <div class="demo"><span>Beauty</span></div>
+        <div class="demo"><span>Sports</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8) ПРАЙС ========== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Вартість послуг</h2>
+      <div class="pricing__grid">
+        <article class="price">
+          <h3>Start</h3>
+          <p class="price__num">від ₴19 900</p>
+          <ul>
+            <li>Базовий переїзд даних</li>
+            <li>Базовий дизайн</li>
+            <li>Підключення GTM/GA4</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Замовити консультацію</a>
+        </article>
+        <article class="price price--popular">
+          <h3>Business</h3>
+          <p class="price__num">від ₴39 900</p>
+          <ul>
+            <li>Повний переїзд (товари, клієнти, замовлення, SEO)</li>
+            <li>Індивідуальні модулі</li>
+            <li>CRM + телефонія</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">Замовити консультацію</a>
+        </article>
+        <article class="price">
+          <h3>Enterprise</h3>
+          <p class="price__num">від ₴79 900</p>
+          <ul>
+            <li>Складні інтеграції та автоматизації</li>
+            <li>Аналітика end-to-end</li>
+            <li>Супровід та SLA</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Замовити консультацію</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9) БАНЕР ЗІ ЗНИЖКОЮ ========== -->
+  <section class="discount">
+    <div class="container">
+      <p><strong>Следующие 5 клиентов получают скидку 30%</strong></p>
+    </div>
+  </section>
+
+  <!-- ========== 10) МІКРОКОНВЕРСІЇ ========== -->
+  <section class="micro" id="micro">
+    <div class="container">
+      <h2 class="section-title">Мікроконверсії</h2>
+      <div class="micro__grid">
+        <a class="micro__item" href="#" aria-label="Підписка на Telegram-канал з кейсами">Подписка на Telegram-канал з кейсами</a>
+        <a class="micro__item" href="#" aria-label="Скачати PDF гайд по переходу">Скачивание PDF «Полный гайд по переходу»</a>
+        <a class="micro__item" href="#" aria-label="Вебинар про прибуток після уходу з маркетплейсів">Вебинар «Как увеличить прибыль, уйдя с маркетплейсов»</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 11) ФОРМА КОНТАКТУ ========== -->
+  <section class="contact" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__left">
+        <h2 class="section-title">Зв’язатися з нами</h2>
+        <form id="contactForm" novalidate>
+          <label class="sr-only" for="name">Ім’я</label>
+          <input id="name" type="text" placeholder="Ваше ім’я" required />
+          <label class="sr-only" for="phone">Телефон</label>
+          <input id="phone" type="tel" placeholder="Ваш телефон" required />
+          <textarea id="message" rows="4" placeholder="Коротко опишіть ваш магазин"></textarea>
+          <button class="btn btn--primary" type="submit">Надіслати</button>
+          <p class="form__note" id="formNote" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="contact__right">
+        <div class="contact__card">
+          <h3>Контакти</h3>
+          <p>Тел.: <a href="tel:+380501112233">+38 (050) 111-22-33</a></p>
+          <p>Тел.: <a href="tel:+380671112233">+38 (067) 111-22-33</a></p>
+          <p>Email: <a href="mailto:hello@sitelab.com.ua">hello@sitelab.com.ua</a></p>
+          <small>Замініть на ваші реальні контакти.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 12) ФУТЕР ========== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> SiteLab — Переїзд з Prom.ua на OpenCart</p>
+      <nav class="footer__nav">
+        <a href="#cases">Кейси</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ================== SCRIPTS ================== -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Calculator
+    const turnover = document.getElementById('turnover');
+    const chips = document.querySelectorAll('.chip');
+    const feeOut = document.getElementById('fee');
+    const saveOut = document.getElementById('save');
+    let pct = 10;
+
+    function formatUA(n) {
+      return '₴' + (Math.round(n)).toLocaleString('uk-UA');
+    }
+    function recalc() {
+      const t = Number(turnover.value || 0);
+      const fee = t * (pct / 100);
+      feeOut.textContent = formatUA(fee);
+      saveOut.textContent = formatUA(fee); // економія = комісія, бо на OpenCart 0%
+    }
+    chips.forEach(b=>{
+      b.addEventListener('click', ()=>{
+        chips.forEach(c=>c.classList.remove('chip--active'));
+        b.classList.add('chip--active');
+        pct = Number(b.dataset.pct);
+        recalc();
+      });
+    });
+    turnover.addEventListener('input', recalc);
+    // Default select 10%
+    document.querySelector('.chip[data-pct="10"]').classList.add('chip--active');
+
+    // Cases modal
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    function closeModal(){ modal.setAttribute('aria-hidden','true'); document.body.classList.remove('no-scroll'); }
+    document.querySelectorAll('.case').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        modalTitle.textContent = btn.dataset.caseTitle;
+        const raw = btn.getAttribute('data-case-text') || '';
+        modalText.innerHTML = raw.replace(/&amp;#10;|&#10;|\r\n|\r|\n/g, '<br>');
+        modal.removeAttribute('aria-hidden');
+        document.body.classList.add('no-scroll');
+      });
+    });
+    modal.addEventListener('click', (e)=>{
+      if(e.target.hasAttribute('data-close')) closeModal();
+    });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+
+    // Contact form (front-end demo)
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      if(!form.checkValidity()){
+        note.textContent = 'Перевірте поля форми.';
+        note.className = 'form__note form__note--bad';
+        return;
+      }
+      note.textContent = 'Дякуємо! Ми зв’яжемося з вами протягом доби.';
+      note.className = 'form__note form__note--ok';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
