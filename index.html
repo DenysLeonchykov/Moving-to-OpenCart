@@ -235,118 +235,71 @@
         <summary>Як буде відбуватися переїзд на Опенкарт?</summary>
         <p>Покроково, дуже простими словами<br>
             0. Що нам потрібно від вас (підготовка)<br>
-
             Доступ в адмінку Prom.ua і до прайсів/фіду (CSV/XML).
-
             Домен (доступ до DNS) і хостинг/VPS (або ми піднімемо самі в Docker).
-
             Логотип/кольори, список потрібних інтеграцій (оплати, доставка, CRM, месенджери).<br><br>
 
             1. Копіюємо все добро з Прома<br>
-
             Товари: назви, ціни, залишки, фото, варіації (колір/розмір), SKU.
-
             Категорії: дерево, ЧПУ-посилання (URL), мета-теги.
-
             Клієнти і замовлення (якщо потрібно): CSV/Excel вивантаження.
-
             Відгуки і питання (по можливості джерела).
-
             SEO-дані: поточні URL, мета-теги, sitemap — щоб нічого не втратити в пошуку.
-
             Думаємо про Пром як про стару дитячу коробку: дістаємо всі іграшки і підписуємо, де що лежало.<br><br>
 
             2. Ставимо OpenCart і робимо фундамент<br>
-
             Розгортаємо OpenCart (стабільна актуальна версія) → на VPS/хостингу або в Docker.
-
             Створюємо тестовий домен (типу stage.sitelab.com.ua), щоб ви все бачили, але клієнти — ні.
-
-            Ставимо базові модулі: чисті ЧПУ-URL, мультиязик/валюта, кешування, e-mail-сповіщення.
-
+            Ставимо базові модулі: чисті ЧПУ-URL, мультиязик/валюта, кешування, e-mail-сповіщення
             Імпортуємо товари/категорії через імпорт-модуль або підготовлений скрипт (щоб фото підтягнулися правильно).<br><br>
 
             3. Дизайн і зручність<br>
-
             Підключаємо тему (адаптивну, швидку) і фарбуємо під ваш бренд.
-
             Робиться структура категорій, фільтри, пошук, картка товару з потрібними полями.
-
             Правим корзину/оформлення замовлення: менше полів, більше конверсії.
-
             Загружаємо статичні сторінки: «Доставка», «Оплата», «Гарантія», «Контакти».<br><br>
 
             4. Підключаємо важливі служби (щоб магазин жив)<br>
-
             Оплати: LiqPay/WayForPay/Portmone/Mono/Stripe — що вам потрібно.
-
             Доставка: НП/Укрпошта/Meest — з калькуляторами і відділеннями.
-
             CRM і зв'язок: Бітрікс24/Zoho/HubSpot, телефония, месенджери (Telegram/Viber/WhatsApp).
-
             Аналітика: Google Tag Manager + GA4, насквозь: перегляд → кошик → замовлення → оплата.
-
             E-mail/SMS: листи про замовлення, статусах, полишена корзина.
-
             Хочете — встановлюємо n8n (latest) для автоматизації: синхронізація цін/залишків, авто-постинг, звіти, покинуті кошики, вивантаження в Google Sheets і Telegram..<br><br>
 
             5. SEO і редиректи (щоб трафік не впав)<br>
-
             Зберігаємо ваші хороші URL. Якщо змінюються — будуємо таблицю 301-редиректів: старий -> новий.
-
             Генеруємо sitemap.xml і robots.txt.
-
             Налаштовуємо мета-теги/структуровані дані (schema.org).
-
             Перевіряємо швидкості (PageSpeed) і чистоту індексації.<br><br>
-
+            
             6. Велике тестування (чек-лист)<br>
-
             Каталог: фільтри, пошук, картки, ціни, залишки.
-
             Замовлення: від «В кошик» до «Оплачено» (всі способи).
-
             Листи/сповіщення: клієнту та менеджерам.
-
             Мобільна версія.
-
             Розширена e-commerce розмітка в GA4 (події доходять?).
 
             7. М'яке включення (переключаємо домен)
-
             Ставимо режим заморозки на Проме на пару годин (щоб не втекли свіжі замовлення).
-
             Переключаємо DNS на OpenCart (можна вночі).
-
             Перевіряємо, що всі 301 працюють і оплата проходить.
-
             Включаємо рекламу/маркетинг на новий сайт.<br><br>
 
             8. Після запуску (перші 2–4 тижні)<br>
 
             Моніторинг помилок, логів, конверсій.
-
             Підкрутка швидкостей/UX по карті кліків і показниках.
-
             Навчання менеджерів і короткі відео-інструкції «що де натискати».
-
-            При необхідності — автосинхронізації, прайс-фіди маркетплейсам, фіди Merchant Center.
-
-            Скільки це зазвичай займає
-
-            Підготовка і імпорт: 3–7 днів (залежить від обсягу).
-
-            Дизайн/налаштування/інтеграції: 7–14 днів.
-
-            Тести + SEO + запуск: 2–5 днів.
-            В середньому реальний переїзд укладається в 2–3 тижні без втрати трафіку і замовлень.
-
-            Гарантії і безпека
-
-            Є план відкоту: Пром не вимикаємо до фінальної перевірки.
-
+            При необхідності — автосинхронізації, прайс-фіди маркетплейсам, фіди Merchant Center.<br><br>
+            Скільки це зазвичай займає<br>
+            Підготовка і імпорт: 3–7 днів (залежить від обсягу).<br>
+            Дизайн/налаштування/інтеграції: 7–14 днів.<br>
+            Тести + SEO + запуск: 2–5 днів.<br>
+            В середньому реальний переїзд укладається в 2–3 тижні без втрати трафіку і замовлень.<br><br>
+            Гарантії і безпека<br><br>
+            Є план відкату: <br>Пром не вимикаємо до фінальної перевірки.                    
             Все дані бекапимо (товари, клієнти, замовлення).
-
             Доступи і персональні дані передаються по захищених каналах.</p>
       </details>
     </div>
@@ -440,7 +393,7 @@
       <div class="demos__grid">
         <div class="demo">
           <figure class="demo__media">
-            <img src="images/demos/fashion.jpg" alt="Демо шаблон магазину Fashion" loading="lazy">
+            <img src="images/demos/furniture.jpg" alt="Демо шаблон магазину Furniture" loading="lazy">
           </figure>
           <span><a href="https://www.templatemonster.com/ua/opencart-templates/184049.html" target="_blank">Mega Store</a></span>
         </div>
@@ -452,13 +405,13 @@
         </div>
         <div class="demo">
           <figure class="demo__media">
-            <img src="images/demos/furniture.jpg" alt="Демо шаблон магазину Furniture" loading="lazy">
+            <img src="images/demos/fashion.jpg" alt="Демо шаблон магазину Fashion" loading="lazy">
           </figure>
           <span><a href="https://www.templatemonster.com/ua/opencart-templates/208088.html" target="_blank">Fashion Store</a></span>
         </div>
         <div class="demo">
           <figure class="demo__media">
-            <img src="images/demos/beauty.jpg" alt="Демо шаблон магазину Beauty" loading="lazy">
+            <img src="images/demos/beauty.jpg" alt="Демо шаблон магазину техтовари" loading="lazy">
           </figure>
           <span><a href="https://www.templatemonster.com/ua/opencart-templates/234194.html" target="_blank">Toolex</a></span>
         </div>
@@ -577,41 +530,109 @@
   <!-- ========== 10) МІКРОКОНВЕРСІЇ ========== -->
   <section class="micro" id="micro">
     <div class="container">
-      <h2 class="section-title">Мікроконверсії</h2>
+      <h2 class="section-title">Додаткові ресурси</h2>
       <div class="micro__grid">
-        <a class="micro__item" href="#" aria-label="Підписка на Telegram-канал з кейсами">Підписка на Telegram-канал з кейсами</a>
-        <a class="micro__item" href="#" aria-label="Скачати PDF гайд по переходу">Скачування PDF «Повний гайд по переходу»</a>
-        <a class="micro__item" href="#" aria-label="Вебинар про прибуток після уходу з маркетплейсів">Вебинар «Як збільшити прибуток, уйшовши з маркетплейсів»</a>
+        <a class="micro__item" href="#contact" aria-label="Підписка на Telegram-канал з кейсами">Підписка на Telegram-канал з кейсами</a>
+        <a class="micro__item" href="#contact" aria-label="Скачати PDF гайд по переходу">Скачування PDF «Повний гайд по переходу»</a>
+        <a class="micro__item" href="#contact" aria-label="Вебинар про прибуток після уходу з маркетплейсів">Вебинар «Як збільшити прибуток, уйшовши з маркетплейсів»</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== 11) ФОРМА КОНТАКТУ ========== -->
-  <section class="contact" id="contact">
-    <div class="container contact__grid">
-      <div class="contact__left">
-        <h2 class="section-title">Зв’язатися з нами</h2>
-        <form id="contactForm" novalidate>
-          <label class="sr-only" for="name">Ім’я</label>
-          <input id="name" type="text" placeholder="Ваше ім’я" required />
-          <label class="sr-only" for="phone">Телефон</label>
-          <input id="phone" type="tel" placeholder="Ваш телефон" required />
-          <textarea id="message" rows="4" placeholder="Коротко опишіть ваш магазин"></textarea>
-          <button class="btn btn--primary" type="submit">Надіслати</button>
-          <p class="form__note" id="formNote" aria-live="polite"></p>
-        </form>
-      </div>
-      <div class="contact__right">
-        <div class="contact__card">
-          <h3>Контакти</h3>
-          <p>Зателефонуйте до нас: <br>Тел.: <a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
-          <p>Vider, Telegram, WhatsApp: <br>Тел.: <a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
-          <p>Напишіть нам листа: <br> Email: <a href="mailsitelab@gmail.com">mailsitelab@gmail.com</a></p>
-          <small>Працюємо з 9:00 до 18:00,<br> Вихідні: Субота, Неділя</small>
+<!-- 1) Невидимый iframe для ответа -->
+<iframe name="tg_iframe" id="tg_iframe"
+        style="width:0;height:0;border:0;visibility:hidden"></iframe>
+
+
+<!-- Контактная форма -->
+<section id="contact" class="contact">
+  <div class="container contact__grid">
+    <div class="contact__left">
+      <h2 class="section-title">Залиште заявку</h2>
+
+      <form class="contact__form"
+        action="https://script.google.com/macros/s/AKfycbx5M_ke0A4lX794dqmqKDSSY3lmvQ8YN72O50ldFsZ5-nTVDKShOg2ineYSZ-Qi8mO5/exec"
+        method="POST"
+        target="tg_iframe"
+        accept-charset="utf-8"
+        id="contactForm">
+        <input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off">
+
+        <label>Ім'я
+          <input name="name" required minlength="2" placeholder="Ваше ім'я">
+        </label>
+
+        <label>Телефон
+          <input name="phone" type="tel" required placeholder="+380XXXXXXXXX">
+        </label>
+
+        <label>Повідомлення
+          <textarea name="message" required minlength="5" placeholder="Коротко опишіть задачу"></textarea>
+        </label>
+
+        <input type="hidden" name="page" value="">
+
+        <div class="contact__actions">
+          <button class="btn btn--primary contact__submit" type="submit">Надіслати</button>
+          <p id="result" class="form__note" aria-live="polite"></p>
         </div>
+      </form>
+    </div>
+    <div class="contact__right">
+      <div class="contact__card">
+        <h3>Контакти</h3>
+        <p>Телефон:<br><a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
+        <p>Viber / Telegram / WhatsApp:<br><a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
+        <p>Email:<br><a href="mailto:mailsitelab@gmail.com">mailsitelab@gmail.com</a></p>
+        <small>Пн–Пт: 9:00–18:00, Сб–Нд: вихідний</small>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  // Записуємо URL сторінки у hidden-поле "page"
+  (function(){
+    const pg = document.querySelector('input[name="page"]');
+    if (pg) pg.value = location.href;
+  })();
+
+  (function () {
+    const form = document.getElementById('contactForm');
+    const btn  = form?.querySelector('.contact__submit');
+    const res  = document.getElementById('result');
+    const honey = document.getElementById('website');
+    const iframe = document.getElementById('tg_iframe');
+
+    if (!form || !iframe) return;
+
+    form.addEventListener('submit', function () {
+      if (honey && honey.value.trim() !== '') return;
+
+      if (btn) {
+        btn.dataset.text = btn.textContent;
+        btn.textContent = 'Надсилаємо…';
+        btn.disabled = true;
+      }
+      if (res) {
+        res.textContent = '';
+        res.className = 'form__note';
+      }
+    });
+
+    iframe.addEventListener('load', function () {
+      if (res) {
+        res.textContent = 'Дякуємо! Ми зв'яжемося з вами протягом години.';
+        res.className = 'form__note form__note--ok';
+      }
+      form.reset();
+      if (btn) {
+        btn.textContent = btn.dataset.text || 'Надіслати';
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
 
   <!-- ========== 12) ФУТЕР ========== -->
   <footer class="footer">
@@ -678,23 +699,46 @@
     });
     document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
-    // Contact form (front-end demo)
+    // Contact form validation (only block send when invalid)
     const form = document.getElementById('contactForm');
-    const note = document.getElementById('formNote');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      if(!form.checkValidity()){
-        note.textContent = 'Перевірте поля форми.';
-        note.className = 'form__note form__note--bad';
-        return;
-      }
-      note.textContent = 'Дякуємо! Ми зв’яжемося з вами протягом доби.';
-      note.className = 'form__note form__note--ok';
-      form.reset();
-    });
+    const note = document.getElementById('result');
+    if (form) {
+      form.addEventListener('submit', (e)=>{
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          if (note) {
+            note.textContent = 'Перевірте заповнені поля.';
+          note.className = 'form__note form__note--bad';
+          }
+          return;
+        }
+        if (note) {
+          note.className = 'form__note';
+        }
+      });
+    }
   </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
