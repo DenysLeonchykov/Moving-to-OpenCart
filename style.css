@@ -1,4 +1,4 @@
-п»ї:root{
+:root{
   --bg:#0b1220;
   --panel:#0f172a;
   --muted:#94a3b8;
@@ -116,8 +116,8 @@ a:hover{color:var(--brand)}
 .list{margin:0;list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
 .list li{position:relative;padding-left:28px;color:inherit}
 .list li::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);font-weight:800;font-size:1rem}
-.list--bad li::before{content:"вњ•";color:var(--danger)}
-.list--good li::before{content:"вњ“";color:var(--brand-2)}
+.list--bad li::before{content:"\2716";color:var(--bad)}
+.list--good li::before{content:"\2713";color:var(--brand-2)}
 
 /* Cases */
 .cases{padding:48px 0}
@@ -714,8 +714,9 @@ a:hover{color:var(--brand)}
 .price{background:rgba(15,23,42,.65);border:1px solid #1f2937;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px}
 .price h3{margin:0;font-size:20px}
 .price__num{font-size:26px;font-weight:800;margin:2px 0 8px}
-.price ul{margin:0 0 10px 18px}
-.price li{list-style:'вЂў  '}
+.price ul{margin:0 0 10px;list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.price li{position:relative;padding-left:24px}
+.price li::before{content:"\2713";position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--brand-2);font-weight:800}
 .price--popular{outline:none;box-shadow:none}
 .price .btn{margin-top:auto;width:100%;}
 .price--popular .btn{margin-inline:auto;}
@@ -738,8 +739,8 @@ a:hover{color:var(--brand)}
 .contact__header{max-width:960px;margin:0 auto 28px;text-align:left;}
 .contact__badge{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;border:1px solid rgba(59,130,246,.35);background:rgba(59,130,246,.12);font-weight:700;font-size:14px;letter-spacing:.02em;color:var(--text);}
 .contact__header .section-title{margin:0 0 12px;}
-.contact__left,.contact__card{background:rgba(15,23,42,.78);border:1px solid #1f2937;border-radius:20px;padding:32px;box-shadow:0 24px 54px rgba(15,23,42,.35);height:100%}
-.contact__left{display:flex;flex-direction:column;gap:18px}
+.contact__left,.contact__card{background:rgba(15,23,42,.78);border:1px solid #1f2937;border-radius:20px;padding:32px;box-shadow:0 24px 54px rgba(15,23,42,.35);}
+.contact__left{display:flex;flex-direction:column;gap:18px;height:100%}
 .contact__form label{display:flex;flex-direction:column;gap:8px;font-weight:600;color:rgba(226,232,240,.86);}
 .contact__actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:8px;}
 .contact__actions .btn{margin:0;min-width:220px;}
@@ -755,7 +756,7 @@ a:hover{color:var(--brand)}
 .form__note--bad{color:#f87171}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .contact__right{display:flex;align-items:stretch}
-.contact__card{display:flex;flex-direction:column;justify-content:flex-start;gap:18px}
+.contact__card{display:flex;flex-direction:column;justify-content:center;gap:18px;height:100%}
 .contact__card h3{margin:0;font-size:20px}
 .contact__card p{margin:0;font-weight:600}
 .contact__card a{color:var(--brand)}
@@ -771,9 +772,9 @@ a:hover{color:var(--brand)}
   flex-direction:column;
   gap:6px;
 
-  justify-content: center; /* С†РµРЅС‚СЂ РїРѕ РІРµСЂС‚РёРєР°Р»Рё */
-  align-items: center;     /* С†РµРЅС‚СЂ РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё */
-  text-align: center;      /* С‡С‚РѕР±С‹ С‚РµРєСЃС‚ Р±С‹Р» СЂРѕРІРЅРѕ РїРѕ С†РµРЅС‚СЂСѓ */
+  justify-content: center; /* центр по вертикали */
+  align-items: center;     /* центр по горизонтали */
+  text-align: center;      /* чтобы текст был ровно по центру */
 }
 .contact__highlight strong{color:var(--good);font-size:16px;}
 .contact__highlight span{color:rgba(226,232,240,.9);font-weight:600;}
@@ -806,12 +807,12 @@ a:hover{color:var(--brand)}
   .contact__actions .btn{width:100%}
 }
 
-/* === РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ 1px СЃРµСЂР°СЏ РѕР±РІРѕРґРєР° РґР»СЏ РІСЃРµС… РєРЅРѕРїРѕРє === */
+/* === Универсальная 1px серая обводка для всех кнопок === */
 :root{
-  --btn-border-color: #bdbdbd; /* РјСЏРіРєРёР№ СЃРµСЂС‹Р№ */
+  --btn-border-color: #bdbdbd; /* мягкий серый */
 }
 
-/* РљРЅРѕРїРєРё Рё "РєРЅРѕРїРєРѕ-СЃСЃС‹Р»РєРё" */
+/* Кнопки и "кнопко-ссылки" */
 button,
 .btn,
 .button,
@@ -820,14 +821,14 @@ input[type="submit"],
 a.button,
 a.btn {
   border: 1px solid var(--btn-border-color);
-  /* С‡С‚РѕР±С‹ РіСЂР°РЅРёС†Р° С‚РѕС‡РЅРѕ Р±С‹Р»Р° РІРёРґРЅР°, РґР°Р¶Рµ РµСЃР»Рё РіРґРµ-С‚Рѕ СЃС‚РѕСЏР»Рѕ border: none */
-  /* РµСЃР»Рё РІРґСЂСѓРі РЅРµ РїСЂРёРјРµРЅРёС‚СЃСЏ вЂ” СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№ СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ */
+  /* чтобы граница точно была видна, даже если где-то стояло border: none */
+  /* если вдруг не применится — раскомментируй следующую строку */
   /* border: 1px solid var(--btn-border-color) !important; */
-  box-sizing: border-box; /* РіСЂР°РЅРёС†Р° РЅРµ "Р»РѕРјР°РµС‚" СЂР°Р·РјРµСЂС‹ */
-  border-radius: 26px;      /* РјРѕР¶РЅРѕ СѓР±СЂР°С‚СЊ, РµСЃР»Рё РЅРµ РЅСѓР¶РЅРѕ СЃРєСЂСѓРіР»РµРЅРёРµ */
+  box-sizing: border-box; /* граница не "ломает" размеры */
+  border-radius: 26px;      /* можно убрать, если не нужно скругление */
 }
 
-/* РќР° РЅР°РІРµРґРµРЅРёРµ Рё С„РѕРєСѓСЃ вЂ” С‚Р° Р¶Рµ РѕР±РІРѕРґРєР° (РЅРµ РїСЂРѕРїР°РґР°РµС‚) */
+/* На наведение и фокус — та же обводка (не пропадает) */
 button:hover,
 .btn:hover,
 .button:hover,
@@ -843,7 +844,7 @@ input[type="submit"]:focus,
 a.button:focus,
 a.btn:focus {
   border: 1px solid var(--btn-border-color);
-  outline: none; /* С‡С‚РѕР±С‹ РЅРµ Р±С‹Р»Рѕ РґРІРѕР№РЅРѕР№ СЂР°РјРєРё Р±СЂР°СѓР·РµСЂР° */
+  outline: none; /* чтобы не было двойной рамки браузера */
 }
 
 
@@ -862,7 +863,7 @@ a.btn:focus {
 }
 
 #contact button.submit-button {
-  border: 1px solid #9aa0a6; /* 1px СЃРµСЂР°СЏ РѕР±РІРѕРґРєР° */
+  border: 1px solid #9aa0a6; /* 1px серая обводка */
   background: transparent;
   padding: 12px 18px;
   border-radius: 28px;
