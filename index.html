@@ -351,7 +351,7 @@
             <span>Будівельний магазин «Майстерок»</span>
           </div>
           <div class="review-card__highlight review-card__highlight--success">
-            <strong>₴45 000</strong>
+            <strong>₴40 000</strong>
             <span>економія щомісяця</span>
           </div>
         </article>
@@ -546,9 +546,27 @@
 
 <!-- Контактная форма -->
 <section id="contact" class="contact">
+  <div class="container contact__header">
+
+    <h2 class="section-title">Безкоштовна консультація</h2>
+              
+    <p class="lead1">
+          Отримайте безкоштовну консультацію та розрахунок вартості переходу з Prom.ua на OpenCart. Відповімо протягом години в робочий час.
+        </p>
+    
+    <p class="contact__highlight">
+
+                <strong>⚡ Швидкий старт</strong>
+
+                <span>Консультація → Договір → Розрахунок → Початок роботи протягом 24 годин</span>
+
+              </p>
+  </div>
+
   <div class="container contact__grid">
     <div class="contact__left">
-      <h2 class="section-title">Залиште заявку</h2>
+      <h2 class="section-title">Зв'яжіться з нами зараз</h2>
+
 
       <form class="contact__form"
         action="https://script.google.com/macros/s/AKfycbx5M_ke0A4lX794dqmqKDSSY3lmvQ8YN72O50ldFsZ5-nTVDKShOg2ineYSZ-Qi8mO5/exec"
@@ -573,19 +591,28 @@
         <input type="hidden" name="page" value="">
 
         <div class="contact__actions">
-          <button class="btn btn--primary contact__submit" type="submit">Send message</button>
+          <button class="btn btn--primary contact__submit" type="submit">Відправити повідомлення</button>
           <p id="result" class="form__note" aria-live="polite"></p>
         </div>
       </form>
     </div>
     <div class="contact__right">
       <div class="contact__card">
+        
         <h3>Контакти</h3>
-        <p>Телефон:<br><a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
+
+        <p>Телефони:<br><a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
+
         <p>Viber / Telegram / WhatsApp:<br><a href="tel:+380502450565">+38 (050) 245-05-65</a></p>
+
         <p>Email:<br><a href="mailto:mailsitelab@gmail.com">mailsitelab@gmail.com</a></p>
-        <small>Пн–Пт: 9:00–18:00, Сб–Нд: вихідний</small>
+
+        <small>Пн-Пт: 9:00-18:00, Сб-Нд: вихідний</small>
+
+        
+
       </div>
+
     </div>
   </div>
 </section>
@@ -603,15 +630,18 @@
     const res  = document.getElementById('result');
     const honey = document.getElementById('website');
     const iframe = document.getElementById('tg_iframe');
+    let formSubmitted = false;
 
     if (!form || !iframe) return;
 
     form.addEventListener('submit', function () {
       if (honey && honey.value.trim() !== '') return;
 
+      formSubmitted = true;
+
       if (btn) {
         btn.dataset.text = btn.textContent;
-        btn.textContent = 'Sending…';
+        btn.textContent = 'Sending:';
         btn.disabled = true;
       }
       if (res) {
@@ -621,6 +651,8 @@
     });
 
     iframe.addEventListener('load', function () {
+      if (!formSubmitted) return;
+
       if (res) {
         res.textContent = 'Thanks! We will contact you within an hour.';
         res.className = 'form__note form__note--ok';
@@ -630,7 +662,9 @@
         btn.textContent = btn.dataset.text || 'Send message';
         btn.disabled = false;
       }
+      formSubmitted = false;
     });
+
   })();
 </script>
 
@@ -721,6 +755,8 @@
 
 </body>
 </html>
+
+
 
 
 
