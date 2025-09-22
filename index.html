@@ -573,7 +573,7 @@
         <input type="hidden" name="page" value="">
 
         <div class="contact__actions">
-          <button class="btn btn--primary contact__submit" type="submit">Надіслати</button>
+          <button class="btn btn--primary contact__submit" type="submit">Send message</button>
           <p id="result" class="form__note" aria-live="polite"></p>
         </div>
       </form>
@@ -611,7 +611,7 @@
 
       if (btn) {
         btn.dataset.text = btn.textContent;
-        btn.textContent = 'Надсилаємо…';
+        btn.textContent = 'Sending…';
         btn.disabled = true;
       }
       if (res) {
@@ -622,12 +622,12 @@
 
     iframe.addEventListener('load', function () {
       if (res) {
-        res.textContent = 'Дякуємо! Ми зв'яжемося з вами протягом години.';
+        res.textContent = 'Thanks! We will contact you within an hour.';
         res.className = 'form__note form__note--ok';
       }
       form.reset();
       if (btn) {
-        btn.textContent = btn.dataset.text || 'Надіслати';
+        btn.textContent = btn.dataset.text || 'Send message';
         btn.disabled = false;
       }
     });
@@ -707,7 +707,7 @@
         if (!form.checkValidity()) {
           e.preventDefault();
           if (note) {
-            note.textContent = 'Перевірте заповнені поля.';
+            note.textContent = 'Please check the required fields.';
           note.className = 'form__note form__note--bad';
           }
           return;
@@ -721,6 +721,7 @@
 
 </body>
 </html>
+
 
 
 
