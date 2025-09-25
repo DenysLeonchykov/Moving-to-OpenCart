@@ -772,9 +772,9 @@ a:hover{color:var(--brand)}
   flex-direction:column;
   gap:6px;
 
-  justify-content: center; /* ����� �� ��������� */
-  align-items: center;     /* ����� �� ����������� */
-  text-align: center;      /* ����� ����� ��� ����� �� ������ */
+  justify-content: center; /* С†РµРЅС‚СЂ РїРѕ РІРµСЂС‚РёРєР°Р»Рё */
+  align-items: center;     /* С†РµРЅС‚СЂ РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё */
+  text-align: center;      /* С‡С‚РѕР±С‹ С‚РµРєСЃС‚ Р±С‹Р» СЂРѕРІРЅРѕ РїРѕ С†РµРЅС‚СЂСѓ */
 }
 .contact__highlight strong{color:var(--good);font-size:16px;}
 .contact__highlight span{color:rgba(226,232,240,.9);font-weight:600;}
@@ -785,6 +785,57 @@ a:hover{color:var(--brand)}
 .footer__nav a{color:var(--muted);margin-left:14px}
 .footer__nav a:hover{color:#fff}
 
+
+/* Floating messenger buttons */
+.messengers-floating{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:1000;
+}
+.messengers-floating__btn{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  box-shadow:0 12px 30px rgba(15,23,42,.4);
+  transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;
+  background:#1f2937;
+}
+.messengers-floating__btn svg{
+  display:block;
+  width:26px;
+  height:26px;
+  fill:currentColor;
+}
+.messengers-floating__btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(15,23,42,.5);
+  opacity:.9;
+}
+.messengers-floating__btn:focus-visible{
+  outline:3px solid rgba(148,163,184,.6);
+  outline-offset:2px;
+}
+.messengers-floating__btn--whatsapp{background:#25d366;}
+.messengers-floating__btn--telegram{background:#2aabee;}
+@media(max-width:640px){
+  .messengers-floating{
+    right:16px;
+    bottom:16px;
+    gap:10px;
+  }
+  .messengers-floating__btn{
+    width:52px;
+    height:52px;
+  }
+}
 /* Media */
 @media(max-width:980px){
   .hero__grid{grid-template-columns:1fr}
@@ -807,12 +858,12 @@ a:hover{color:var(--brand)}
   .contact__actions .btn{width:100%}
 }
 
-/* === ������������� 1px ����� ������� ��� ���� ������ === */
+/* === РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ 1px СЃРµСЂР°СЏ РѕР±РІРѕРґРєР° РґР»СЏ РІСЃРµС… РєРЅРѕРїРѕРє === */
 :root{
-  --btn-border-color: #bdbdbd; /* ������ ����� */
+  --btn-border-color: #bdbdbd; /* РјСЏРіРєРёР№ СЃРµСЂС‹Р№ */
 }
 
-/* ������ � "������-������" */
+/* РљРЅРѕРїРєРё Рё "РєРЅРѕРїРєРѕ-СЃСЃС‹Р»РєРё" */
 button,
 .btn,
 .button,
@@ -821,14 +872,14 @@ input[type="submit"],
 a.button,
 a.btn {
   border: 1px solid var(--btn-border-color);
-  /* ����� ������� ����� ���� �����, ���� ���� ���-�� ������ border: none */
-  /* ���� ����� �� ���������� � �������������� ��������� ������ */
+  /* С‡С‚РѕР±С‹ РіСЂР°РЅРёС†Р° С‚РѕС‡РЅРѕ Р±С‹Р»Р° РІРёРґРЅР°, РґР°Р¶Рµ РµСЃР»Рё РіРґРµ-С‚Рѕ СЃС‚РѕСЏР»Рѕ border: none */
+  /* РµСЃР»Рё РІРґСЂСѓРі РЅРµ РїСЂРёРјРµРЅРёС‚СЃСЏ вЂ” СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№ СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ */
   /* border: 1px solid var(--btn-border-color) !important; */
-  box-sizing: border-box; /* ������� �� "������" ������� */
-  border-radius: 26px;      /* ����� ������, ���� �� ����� ���������� */
+  box-sizing: border-box; /* РіСЂР°РЅРёС†Р° РЅРµ "Р»РѕРјР°РµС‚" СЂР°Р·РјРµСЂС‹ */
+  border-radius: 26px;      /* РјРѕР¶РЅРѕ СѓР±СЂР°С‚СЊ, РµСЃР»Рё РЅРµ РЅСѓР¶РЅРѕ СЃРєСЂСѓРіР»РµРЅРёРµ */
 }
 
-/* �� ��������� � ����� � �� �� ������� (�� ���������) */
+/* РќР° РЅР°РІРµРґРµРЅРёРµ Рё С„РѕРєСѓСЃ вЂ” С‚Р° Р¶Рµ РѕР±РІРѕРґРєР° (РЅРµ РїСЂРѕРїР°РґР°РµС‚) */
 button:hover,
 .btn:hover,
 .button:hover,
@@ -844,7 +895,7 @@ input[type="submit"]:focus,
 a.button:focus,
 a.btn:focus {
   border: 1px solid var(--btn-border-color);
-  outline: none; /* ����� �� ���� ������� ����� �������� */
+  outline: none; /* С‡С‚РѕР±С‹ РЅРµ Р±С‹Р»Рѕ РґРІРѕР№РЅРѕР№ СЂР°РјРєРё Р±СЂР°СѓР·РµСЂР° */
 }
 
 
@@ -863,7 +914,7 @@ a.btn:focus {
 }
 
 #contact button.submit-button {
-  border: 1px solid #9aa0a6; /* 1px ����� ������� */
+  border: 1px solid #9aa0a6; /* 1px СЃРµСЂР°СЏ РѕР±РІРѕРґРєР° */
   background: transparent;
   padding: 12px 18px;
   border-radius: 28px;
