@@ -662,7 +662,7 @@
       if (!formSubmitted) return;
 
       if (res) {
-        res.textContent = 'Дякуємо! Ми зв\``````'яжемося з вами найближчим часом.';
+        res.textContent = 'Дякуємо! Ми зв\'яжемося з вами найближчим часом.';
         res.className = 'form__note form__note--ok';
       }
       form.reset();
@@ -749,7 +749,7 @@
         if (!form.checkValidity()) {
           e.preventDefault();
           if (note) {
-            note.textContent = 'Please check the required fields.';
+            note.textContent = 'Будь ласка, заповніть обов\'язкові поля.';
           note.className = 'form__note form__note--bad';
           }
           return;
